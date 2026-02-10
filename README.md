@@ -1,7 +1,7 @@
 # Proyecto Lector de Barras 1D
 
 **Autor:** Bernardo Moscardo
-**GitHub:** [nardo30](https://github.com/nardo30)
+**GitHub:** [nardet30](https://github.com/nardet30)
 
 ## Descripción
 Este es un proyecto de Python diseñado para leer códigos de barras 1D de forma interactiva utilizando la cámara web del dispositivo. Cuenta con una interfaz visual intuitiva que permite al usuario gestionar los escaneos manualmente mediante un botón, manteniendo un historial en tiempo real de los códigos capturados.
@@ -22,7 +22,7 @@ Sigue estos pasos para configurar el proyecto en tu máquina local (Windows):
 ### 1. Clonar el repositorio
 Si tienes Git instalado, puedes clonar el proyecto directamente:
 ```bash
-git clone https://github.com/nardo30/Proyecto-Lector-de-barras.git
+git clone https://github.com/nardet30/Proyecto-Lector-de-barras.git
 cd Proyecto-Lector-de-barras
 ```
 
