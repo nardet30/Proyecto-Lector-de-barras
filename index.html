@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lector de Barras - Bernardo Moscardo</title>
+    <style>
+        :root {
+            --primary: #ffa500;
+            --secondary: #00ff7f;
+            --bg: #121212;
+            --text: #ffffff;
+            --card-bg: #1e1e1e;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--primary), #ff4500);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        h1 { margin: 0; font-size: 2.5rem; }
+        .author { font-style: italic; opacity: 0.9; }
+        .card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            border-left: 5px solid var(--primary);
+        }
+        h2 { color: var(--primary); }
+        code {
+            background-color: #000;
+            padding: 10px;
+            display: block;
+            border-radius: 5px;
+            color: var(--secondary);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #e69500;
+            transform: scale(1.05);
+        }
+        .steps {
+            list-style: none;
+            padding: 0;
+        }
+        .steps li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        .steps li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Proyecto Lector de Barras</h1>
+            <p class="author">Creado por Bernardo Moscardo (@nardo30)</p>
+        </header>
+
+        <section class="card">
+            <h2>Descripción</h2>
+            <p>Este sistema interactivo permite la lectura de códigos de barras de una dimensión (1D) utilizando la cámara web de cualquier ordenador. Implementado en Python con OpenCV, ofrece una experiencia de usuario fluida y profesional.</p>
+        </section>
+
+        <section class="card">
+            <h2>Guía de Instalación</h2>
+            <ul class="steps">
+                <li>
+                    <strong>Descarar o Clonar:</strong> Descarga el código desde GitHub o clona el repositorio:
+                    <code>git clone https://github.com/nardo30/Proyecto-Lector-de-barras.git</code>
+                </li>
+                <li>
+                    <strong>Preparar el entorno:</strong> Instala las dependencias necesarias con pip:
+                    <code>pip install opencv-python numpy</code>
+                </li>
+                <li>
+                    <strong>Lanzar la aplicación:</strong> Ejecuta el script de Python:
+                    <code>python lector_barras.py</code>
+                </li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Cómo Funciona</h2>
+            <p>Al iniciar, verás un panel interactivo. Coloca tu producto frente a la cámara y haz clic en el botón naranja <strong>"ESCANEAR"</strong>. La aplicación procesará la imagen, detectará el código y emitirá un pitido de confirmación.</p>
+        </section>
+
+        <div style="text-align: center;">
+            <a href="https://github.com/nardo30" class="btn">Ver mi perfil en GitHub</a>
+        </div>
+    </div>
+</body>
+</html>
