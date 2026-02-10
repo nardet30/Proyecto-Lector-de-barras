@@ -252,6 +252,51 @@
             font-size: 0.8rem;
             margin-right: 10px;
         }
+
+        /* Rating System Styles */
+        .rating-container {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: var(--glass);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stars {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            flex-direction: row-reverse;
+        }
+
+        .stars input {
+            display: none;
+        }
+
+        .stars label {
+            font-size: 2.5rem;
+            color: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        .stars label:hover,
+        .stars label:hover~label,
+        .stars input:checked~label {
+            color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        #feedback-msg {
+            margin-top: 15px;
+            font-weight: 600;
+            color: var(--accent);
+            min-height: 24px;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
     </style>
 </head>
 
@@ -316,7 +361,37 @@
                 </div>
             </section>
         </div>
+
+        <!-- Rating Section -->
+        <section class="rating-container">
+            <h3>¿Qué te ha parecido este proyecto?</h3>
+            <p style="color: var(--text-dim);">¿Te ha sido de utilidad? Califica de 0 a 5 estrellas:</p>
+
+            <div class="stars">
+                <input type="radio" name="star" id="star5" onclick="showFeedback(5)"><label for="star5">★</label>
+                <input type="radio" name="star" id="star4" onclick="showFeedback(4)"><label for="star4">★</label>
+                <input type="radio" name="star" id="star3" onclick="showFeedback(3)"><label for="star3">★</label>
+                <input type="radio" name="star" id="star2" onclick="showFeedback(2)"><label for="star2">★</label>
+                <input type="radio" name="star" id="star1" onclick="showFeedback(1)"><label for="star1">★</label>
+            </div>
+
+            <div id="feedback-msg"></div>
+        </section>
     </div>
+
+    <script>
+        function showFeedback(stars) {
+            const msg = document.getElementById('feedback-msg');
+            msg.style.opacity = '1';
+            if (stars >= 4) {
+                msg.innerText = "¡Muchas gracias! Me alegra que te haya gustado mucho.";
+            } else if (stars === 3) {
+                msg.innerText = "¡Gracias! Trabajaré para seguir mejorando.";
+            } else {
+                msg.innerText = "Gracias por tu feedback, lo tendré en cuenta.";
+            }
+        }
+    </script>
 
     <footer>
         <p>© 2024 Bernardo Moscardo. Código abierto bajo licencia MIT.</p>
